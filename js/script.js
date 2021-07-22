@@ -11,13 +11,23 @@ const guestCount = document.querySelector(".attendance");
 // alert when guest list is full (not yet visible)
 const guestFull = document.querySelector(".alert");
 
+//clear the input box
+const clearInput = function () {
+  guestInput.value = "";
+};
+
+const addToList = function (item) {
+  const listItem = document.createElement("li");
+  listItem.innerText = item;
+  guestList.append(listItem);
+};
+
 //add event listener for addGuestButton
 addGuestButton.addEventListener("click", function () {
   const guest = guestInput.value;
   //console.log(guest); ->test out if guest variable working or not
   if (guest !== "") {
-    let listItem = document.createElement("li");
-    listItem.innerText = guest;
-    guestList.append(listItem);
+    addToList(guest);
   }
+  clearInput();
 });
