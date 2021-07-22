@@ -29,8 +29,8 @@ addGuestButton.addEventListener("click", function () {
   if (guest !== "") {
     addToList(guest);
     updateGuestCount();
+    clearInput();
   }
-  clearInput();
 });
 
 //Limit the guest list to 8 people
